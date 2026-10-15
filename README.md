@@ -92,6 +92,8 @@ Sem as chaves do Cloudflare R2, o agente entrega no modo manual e avisa.
 **Resposta aos comentários**
 - Todo carrossel pede um comentário com a sua palavra (por exemplo, GRUPO). No fim do cadastro você escolhe como responder no direct: à mão, pelo ManyChat (sugerido, tem plano gratuito; o agente ensina a montar) ou por outra automação que já use. Nos três casos o agente entrega os textos prontos.
 
+**Precisa de ajuda?** Abra [docs/Manual-Agente-Instagram.docx](docs/Manual-Agente-Instagram.docx), copie o manual inteiro e cole numa conversa com o Claude junto com o seu problema e a mensagem de erro. Ele explica tudo o que o agente faz e como resolver os problemas mais comuns.
+
 **Guias passo a passo** (o agente ensina por eles, um passo por vez)
 - [Cloudflare R2](docs/pipeline-publicacao.md) · [Metricool](docs/metricool.md) · [ManyChat](docs/manychat.md). A chave da Apify o agente ensina direto na conversa.
 
