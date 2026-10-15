@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@600;700;800;900&display=swap");
+/* Base dos slides do instaflow-designer. Canvas 1080 x 1350 (4:5).
+   As tres cores e as duas letras abaixo sao so o padrao: cada peca as troca em marca.css,
+   com os valores do cadastro. Nao edite este arquivo para mudar a identidade de um perfil. */
+
+:root {
+  /* identidade (sobrescrita por marca.css) */
+  --cor-escura:   #111111;
+  --cor-clara:    #FFFFFF;
+  --cor-destaque: #F25C05;
+  --fonte-titulo: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  --fonte-texto:  'Inter', system-ui, sans-serif;
+
+  /* medidas */
+  --largura: 1080px;
+  --altura:  1350px;
+  --margem:  72px;      /* laterais */
+  --topo:    150px;     /* espaco reservado para a identidade */
+  --base:    80px;
+  --esp-1: 8px;  --esp-2: 16px;  --esp-3: 24px;  --esp-4: 40px;  --esp-5: 64px;
+
+  /* tamanhos de letra */
+  --t-capa: 116px;  --t-titulo: 88px;  --t-cta: 64px;
+  --t-texto: 42px;  --t-texto-grande: 52px;  --t-miudo: 24px;
+}
+
+* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #222; display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 32px; font-family: var(--fonte-texto); }
+em { font-style: normal; color: var(--cor-destaque); }
+strong { font-weight: 800; }
+
+/* ── o slide ─────────────────────────────────────────────────── */
+.slide {
+  position: relative; flex-shrink: 0; overflow: hidden;
+  width: var(--largura); height: var(--altura);
+  padding: var(--topo) var(--margem) var(--base);
+  display: flex; flex-direction: column; justify-content: flex-start;
+  background: var(--cor-clara); color: var(--cor-escura);
+}
+.slide .titulo { font-family: var(--fonte-titulo); letter-spacing: -0.02em; text-wrap: balance; font-style: normal; }
+.slide .texto, .slide .apoio, .slide .chamada { font-family: var(--fonte-texto); letter-spacing: -0.01em; line-height: 1.32; font-style: normal; }
+.slide .traco { flex-shrink: 0; background: var(--cor-destaque); }
+.fonte-do-dado { font-family: var(--fonte-texto); font-size: var(--t-miudo); opacity: .55; margin-top: var(--esp-2); }
+
+/* ── identidade: avatar ou logo, nome e @, no topo de todo slide ─ */
+.identidade { position: absolute; top: 46px; left: var(--margem); z-index: 5; display: flex; align-items: center; gap: 18px; }
+.identidade img { width: 62px; height: 62px; border-radius: 9999px; object-fit: cover; display: block; }
+.identidade .nome { font-family: var(--fonte-titulo); font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; }
+.identidade .arroba { font-family: var(--fonte-texto); font-weight: 400; font-size: 24px; line-height: 1.15; opacity: .55; }
+
+/* ── capa ────────────────────────────────────────────────────── */
+.slide.capa { background: var(--cor-escura); color: var(--cor-clara); justify-content: center; }
+.slide.capa.clara { background: var(--cor-clara); color: var(--cor-escura); }
+.slide.capa .titulo { font-weight: 900; font-size: var(--t-capa); line-height: .98; margin-bottom: var(--esp-4); }
+.slide.capa .apoio { font-weight: 600; font-size: var(--t-texto); opacity: .7; margin-bottom: var(--esp-4); }
+.slide.capa .traco { width: 80px; height: 4px; }
+
+/* ── conteudo (miolo) ────────────────────────────────────────── */
+.slide.conteudo.escuro { background: var(--cor-escura); color: var(--cor-clara); }
+.slide.conteudo .rotulo {
+  font-family: var(--fonte-titulo); font-weight: 700; font-size: var(--t-miudo); line-height: 1;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--cor-destaque); margin-bottom: var(--esp-2);
+}
+.slide.conteudo .traco { width: 60px; height: 3px; margin-bottom: var(--esp-2); }
+.slide.conteudo .titulo { font-weight: 800; font-size: var(--t-titulo); line-height: 1.04; margin-bottom: var(--esp-3); }
+.slide.conteudo .texto { font-weight: 400; font-size: var(--t-texto); }
+.slide.conteudo .texto p { margin-bottom: var(--esp-2); }
+.slide.conteudo .texto p:last-child { margin-bottom: 0; }
+
+/* ── cta (ultimo slide) ──────────────────────────────────────── */
+.slide.cta { background: var(--cor-destaque); color: var(--cor-clara); justify-content: center; gap: var(--esp-5); }
+.slide.cta.escuro { background: var(--cor-escura); }
+.slide.cta .titulo { font-weight: 800; font-size: var(--t-cta); line-height: 1.04; }
+.slide.cta .chamada { font-weight: 600; font-size: var(--t-texto-grande); }
+.slide.cta .isca { font-family: var(--fonte-titulo); font-weight: 900; font-size: var(--t-titulo); line-height: .98; letter-spacing: -0.02em; }
+.slide.cta.escuro .isca { color: var(--cor-destaque); }
+
+/* ── imagem em todo slide: bloco .visual ─────────────────────────
+   Todo slide tem um bloco class="visual" com foto, print, ilustracao (svg)
+   ou tela desenhada. Minimo 12% do slide; na capa, 20%. */
+.visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 0;
+}
+.visual img, .visual svg { max-width: 100%; max-height: 100%; display: block; }
+.visual.cobre img { width: 100%; height: 100%; object-fit: cover; }
+.visual.moldura { background: #FFFFFF; border-radius: 14px; padding: 22px; box-shadow: 0 0 0 2px rgba(127,127,127,.25); }
+.slide.conteudo .visual,
+.slide.cta .visual { margin-top: var(--esp-4); flex: 1; width: 100%; }
+.slide.cta .visual { max-height: 420px; }
+
+/* ── tipos de capa (todos com imagem) ──────────────────────────── */
+.slide.capa:has(.visual) .titulo { font-size: 78px; line-height: 1.02; }
+.slide.capa:has(.visual) .apoio { font-size: 38px; }
+
+/* simbolo: um simbolo grande no centro, texto embaixo */
+.slide.capa.simbolo { align-items: center; justify-content: center; text-align: center; }
+.slide.capa.simbolo .visual { width: 600px; height: 560px; flex: none; margin-bottom: var(--esp-4); }
+.slide.capa.simbolo .traco { margin-left: auto; margin-right: auto; }
+
+/* foto: a foto cobre o slide, veu escuro, texto ancorado embaixo */
+.slide.capa.foto { justify-content: flex-end; color: #FFFFFF; }
+.slide.capa.foto .visual { position: absolute; inset: 0; z-index: 0; }
+.slide.capa.foto .visual img { width: 100%; height: 100%; object-fit: cover; }
+.slide.capa.foto::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.05) 28%, rgba(0,0,0,.88) 78%);
+}
+.slide.capa.foto > *:not(.visual):not(.identidade) { position: relative; z-index: 2; }
+.slide.capa.foto .titulo, .slide.capa.foto .apoio { color: #FFFFFF; }
+
+/* recorte: pessoa recortada (png sem fundo) a direita, texto a esquerda */
+.slide.capa.recorte { justify-content: center; }
+.slide.capa.recorte .visual { position: absolute; right: 0; bottom: 0; width: 56%; height: 74%; align-items: flex-end; z-index: 0; }
+.slide.capa.recorte .titulo, .slide.capa.recorte .apoio { max-width: 60%; position: relative; z-index: 2; }
+
+/* objeto, print e card: texto em cima, o objeto ocupa o resto */
+.slide.capa.objeto, .slide.capa.print, .slide.capa.card { justify-content: flex-start; }
+.slide.capa.objeto .visual, .slide.capa.print .visual, .slide.capa.card .visual { flex: 1; width: 100%; margin-top: var(--esp-4); }
+.slide.capa.print .visual img { border-radius: 12px; }
+.cartao {
+  background: #FFFFFF; color: #111111; border-radius: 18px; padding: 36px 40px; width: 100%;
+  font-family: var(--fonte-texto); font-size: 36px; line-height: 1.3; box-shadow: 0 18px 50px rgba(0,0,0,.28);
+}
+.cartao .cab { display: flex; align-items: center; gap: 16px; font-weight: 700; margin-bottom: 18px; }
+.cartao .cab svg, .cartao .cab img { width: 54px; height: 54px; }
+.cartao small { display: block; opacity: .6; font-size: 26px; margin-top: 14px; }
+
+/* numero: o numero e o protagonista, com um apoio visual ao lado ou embaixo */
+.slide.capa.numero { justify-content: center; }
+.slide.capa.numero .numero {
+  font-family: var(--fonte-titulo); font-weight: 900; font-size: 250px; line-height: .86;
+  letter-spacing: -0.05em; color: var(--cor-destaque); margin-bottom: var(--esp-3);
+}
+.slide.capa.numero .visual { width: 100%; height: 380px; flex: none; margin-top: var(--esp-4); }
+
+/* dividida: duas metades (antes/depois, voce/concorrente) */
+.slide.capa.dividida { justify-content: flex-start; }
+.slide.capa.dividida .visual { flex: 1; width: 100%; margin-top: var(--esp-4); display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 14px; }
+.slide.capa.dividida .lado { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 28px; height: 100%; font-family: var(--fonte-titulo); font-weight: 800; font-size: 40px; text-align: center; }
+.slide.capa.dividida .lado.a { background: var(--cor-clara); color: var(--cor-escura); }
+.slide.capa.dividida .lado.b { background: var(--cor-destaque); color: var(--cor-escura); }
+.slide.capa.dividida .lado svg, .slide.capa.dividida .lado img { width: 190px; height: 190px; }
+
+/* registro profissional (so com regulado: sim): uma linha discreta no ultimo slide */
+.slide .registro { font-family: var(--fonte-texto); font-size: 24px; opacity: .7; margin-top: var(--esp-3); }
+/* logo discreto no ultimo slide (perfil misto) */
+.slide .logo-marca { position: absolute; right: var(--margem); bottom: 46px; height: 56px; width: auto; opacity: .85; }
+
+/* ── layouts de miolo ─────────────────────────────────────────────
+   padrao (sem classe): texto em cima, imagem embaixo
+   imagem-topo: imagem em cima, texto embaixo
+   lado:        texto a esquerda, imagem a direita
+   destaque:    uma frase ou numero gigante + imagem de apoio
+   cheia:       a imagem cobre o slide, texto ancorado embaixo */
+.slide.conteudo.imagem-topo .visual { order: -1; margin-top: 0; margin-bottom: var(--esp-4); flex: 1.2; }
+
+.slide.conteudo.lado { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: min-content; column-gap: 44px; align-content: center; }
+.slide.conteudo.lado > *:not(.visual):not(.identidade) { grid-column: 1; }
+.slide.conteudo.lado > .visual { grid-column: 2; grid-row: 1 / span 6; align-self: center; margin-top: 0; height: 860px; }
+.slide.conteudo.lado .titulo { font-size: 62px; }
+.slide.conteudo.lado .texto p { font-size: 36px; }
+
+.slide.conteudo.destaque { justify-content: center; }
+.slide.conteudo.destaque .frase {
+  font-family: var(--fonte-titulo); font-weight: 900; font-size: 132px; line-height: .95;
+  letter-spacing: -0.04em; color: var(--cor-destaque); margin-bottom: var(--esp-3);
+}
+.slide.conteudo.destaque .visual { flex: none; height: 380px; }
+
+.slide.conteudo.cheia { justify-content: flex-end; color: #FFFFFF; }
+.slide.conteudo.cheia .visual { position: absolute; inset: 0; z-index: 0; margin: 0; }
+.slide.conteudo.cheia .visual img { width: 100%; height: 100%; object-fit: cover; }
+.slide.conteudo.cheia::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.05) 26%, rgba(0,0,0,.9) 74%);
+}
+.slide.conteudo.cheia > *:not(.visual):not(.identidade) { position: relative; z-index: 2; }
+.slide.conteudo.cheia .titulo, .slide.conteudo.cheia .texto p { color: #FFFFFF; }
+.slide.conteudo.compacto { justify-content: center; }

@@ -1,0 +1,5 @@
+# Scripts de shell no Linux/macOS: CRLF quebra com "bad interpreter".
+*.sh text eol=lf
+# O instalador do Windows e lido pelo PowerShell 5.1: CRLF evita surpresa.
+*.bat text eol=crlf
+*.ps1 text eol=crlf

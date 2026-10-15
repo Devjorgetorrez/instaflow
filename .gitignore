@@ -1,0 +1,24 @@
+# Chaves: nunca versionar
+.env
+.env.*
+!.env.example
+
+# Dados de quem usa o agente: cadastro preenchido, fotos, posts e pesquisa
+contexto/cadastro-rascunho.md
+contexto/amostras/
+contexto/arquivo/
+assets/perfil/*
+!assets/perfil/.gitkeep
+conteudo/*
+!conteudo/.gitkeep
+entrega/
+pesquisa-instagram/
+
+# Dependencias e arquivos do sistema
+node_modules/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini

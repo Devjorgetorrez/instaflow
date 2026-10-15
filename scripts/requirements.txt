@@ -1,0 +1,5 @@
+pillow
+yt-dlp
+faster-whisper
+requests
+python-dotenv
