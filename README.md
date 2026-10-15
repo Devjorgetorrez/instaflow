@@ -73,11 +73,17 @@ A revisão do cadastro diz, em uma linha, até onde o agente vai sem você com a
 - Navegador: grátis. Precisa do Instagram logado no navegador do Claude e do computador ligado na hora da rotina.
 
 **Publicação**
-- Metricool, direto: publica no horário, sem passar por você.
+- Metricool, direto: publica no horário, sem passar por você. O plano gratuito publica até 20 posts por mês; para 1 post por dia o mês inteiro, é preciso um plano pago.
 - Metricool, rascunho: fica no Metricool esperando você aprovar.
 - Manual: os slides e a legenda ficam em `entrega/<data>-<tema>/` para você baixar e postar.
 
 Sem as chaves do Cloudflare R2, o agente entrega no modo manual e avisa.
+
+**Resposta aos comentários**
+- Todo carrossel pede um comentário com a sua palavra (por exemplo, GRUPO). Quem responde no direct, sozinho, é uma automação no ManyChat, que tem plano gratuito. O agente ensina a montar no fim do cadastro, com os textos já prontos.
+
+**Guias passo a passo** (o agente ensina por eles, um passo por vez)
+- [Cloudflare R2](docs/pipeline-publicacao.md) · [Metricool](docs/metricool.md) · [ManyChat](docs/manychat.md). A chave da Apify o agente ensina direto na conversa.
 
 ## Pastas
 

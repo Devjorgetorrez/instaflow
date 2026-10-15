@@ -53,7 +53,7 @@ O `.env` já está no `.gitignore`. Nunca envie esse arquivo a ninguém.
 
 ### 3. Metricool
 
-Conecte sua conta do Instagram no Metricool e o conector do Metricool no Claude. O ID da marca e o fuso são gravados pelo agente no cadastro.
+Passo a passo completo em [metricool.md](metricool.md): conta, Instagram conectado dentro do Metricool e o conector do Metricool no Claude. O ID da marca e o fuso são gravados pelo agente no cadastro.
 
 ## O fluxo, depois do setup
 

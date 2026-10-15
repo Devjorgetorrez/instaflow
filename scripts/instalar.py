@@ -108,7 +108,11 @@ def checar(cad):
                 linha("AVISO", "Cloudflare R2: " + texto)
         if not cad.get("metricool_blog_id"):
             linha("VOCE", "Metricool: falta o ID da marca no cadastro")
-        linha("AVISO", "Metricool: confira na sessao se o conector do Metricool esta ligado no Claude (o agente testa listando as marcas)")
+        linha("AVISO", "Metricool: confira na sessao se o conector do Metricool esta ligado no Claude (o agente testa listando as marcas). Passo a passo em docs/metricool.md")
+
+    # --- resposta aos comentarios
+    if cad.get("isca_palavra"):
+        linha("AVISO", f"ManyChat: quem comenta {cad['isca_palavra']} so recebe o direct sozinho com a automacao montada no ManyChat. Passo a passo em docs/manychat.md")
 
     # --- opcionais
     if env.get("OPENROUTER_API_KEY"):
