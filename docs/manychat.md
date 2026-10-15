@@ -4,6 +4,11 @@ Todo carrossel termina pedindo um comentário com a palavra do cadastro (`isca_p
 
 O agente não mexe no ManyChat. Ele ensina, passo a passo, com a palavra e a entrega do cadastro já escritas nos textos.
 
+**É opcional.** O agente funciona sem o ManyChat. Há três caminhos, e quem escolhe é você no fim do cadastro:
+- **ManyChat** (o deste guia): responde sozinho; tem plano gratuito.
+- **Outra ferramenta de automação de direct** que você já usa: a ideia é a mesma (palavra no comentário → direct com a entrega), e os textos prontos do fim deste guia servem para ela.
+- **À mão, sem ferramenta**: você responde quem comentar, colando a mensagem final dos textos prontos.
+
 Os nomes dos botões abaixo são os da central de ajuda do ManyChat, que usa o painel em inglês. Se a tela estiver diferente, a central de ajuda (help.manychat.com) tem a versão atual.
 
 ## Antes de começar

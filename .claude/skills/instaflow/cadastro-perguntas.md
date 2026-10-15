@@ -13,6 +13,7 @@ Sete mensagens (a primeira com uma pergunta só), uma revisão geral e a instala
 3. Ao receber a resposta, anote no rascunho na hora: `python scripts/cadastro.py gravar <campo> "<valor>"`. Faltou algo ou ficou ambíguo: repita **só aquela** pergunta.
 4. Fale a língua do cliente. Nunca diga "hexadecimal", "Google Fonts", "token", "campo" ou nome de arquivo. Pergunte pelo resultado, não pela técnica.
    **Serviço de fora nunca é vago.** Quando a pergunta envolve um serviço externo (Apify, Metricool, Cloudflare), diga sempre: o **nome**, **o que ele faz** em uma linha, **quanto custa** com os números abaixo, e **o que a pessoa vai precisar fazer**. "Um serviço pago" sem nome não é resposta que alguém consiga escolher.
+   **Toda ferramenta de fora é opcional.** Nenhuma é obrigatória para o agente funcionar. Sempre que oferecer uma (Apify, Metricool, Cloudflare, ManyChat), mostre junto o caminho **sem ferramenta** (custo zero) e diga que, se a pessoa já usa **outra ferramenta** para aquilo, ela pode continuar com a dela: você entrega o material num formato que serve para qualquer uma. Nunca apresente uma ferramenta como requisito.
 5. **O que você consegue deduzir, não pergunte: proponha na revisão.** Cores, letras e tom de voz saem do material e do negócio da pessoa, e ela aprova tudo de uma vez no fim.
 6. **Imagens:** peça para arrastar o arquivo para a conversa ou colar o caminho. Você grava com `scripts/salvar_imagem.py`, que precisa do caminho do arquivo no computador; se a imagem chegou colada, sem caminho, peça o caminho ou o arquivo arrastado. Nunca mande salvar, mover ou renomear arquivo. `RECUSADA`: diga o motivo em uma linha e peça outra. Durante o cadastro as imagens ficam numa pasta de rascunho; o avatar, o logo e as fotos em uso só são trocados no `confirmar`.
 7. Senha e chave de acesso: nunca peça na conversa e nunca digite você. Diga em que linha do arquivo `.env` a pessoa cola.
@@ -110,7 +111,7 @@ O número de registro é **bloqueante**: sem ele o guardião reprova.
 
 Não pergunte número de slides, idioma nem fuso. Só mude o padrão se a pessoa pedir.
 
-**Ao gravar a palavra, explique o ManyChat em até 3 linhas, junto com a próxima mensagem** (não é pergunta, não espere resposta): quem comenta a palavra recebe o que foi prometido no direct, sozinho, por uma automação no **ManyChat** (tem plano gratuito); sem ele, cada comentário é respondido à mão; e você ensina a montar, passo a passo, no fim do cadastro. A palavra precisa ser específica: palavra comum ("OI", "SIM") dispara por engano.
+**Ao gravar a palavra, explique em até 3 linhas, junto com a próxima mensagem** (não é pergunta, não espere resposta): quem comenta a palavra precisa receber o que foi prometido no direct. Dá para responder à mão, sem ferramenta nenhuma, ou deixar sozinho com uma automação: você sugere o **ManyChat** (tem plano gratuito), mas serve qualquer outra que a pessoa já use. No fim do cadastro ela escolhe e você ensina. A palavra precisa ser específica: palavra comum ("OI", "SIM") dispara por engano.
 
 ## Mensagem 6 — Concorrentes (3 perguntas)
 
@@ -133,6 +134,8 @@ Não pergunte número de slides, idioma nem fuso. Só mude o padrão se a pessoa
 > - Custo: nada.
 > - O que precisa: o seu Instagram logado nesse navegador e o computador ligado na hora da busca.
 > - Limite: é mais lento, e se o Instagram pedir verificação eu paro e te aviso.
+>
+> A Apify é opcional: pelo navegador funciona sem conta e sem custo.
 
 Os valores são estimativa: o preço é da Apify e pode mudar. Diga isso se a pessoa perguntar, e não prometa valor fechado.
 
@@ -154,8 +157,10 @@ Mais de 5 perfis: diga o custo proporcional (cerca de US$ 0,16 por perfil a cada
 > - O que precisa: uma conta no Metricool com o seu Instagram conectado (o plano gratuito publica até 20 posts por mês, então com 1 post por dia ele acaba perto do dia 20; para postar o mês inteiro é preciso um plano pago) e a conexão do Metricool ligada aqui no Claude.
 > - Precisa também de uma conta gratuita na Cloudflare, onde as imagens ficam guardadas por até 30 dias para o Metricool conseguir ler. No nosso volume não gera cobrança. Eu te guio na criação.
 >
-> **(2) Eu te entrego os arquivos.** Os slides e a legenda ficam numa pasta aqui do projeto, e você posta pelo celular ou pelo computador.
+> **(2) Eu te entrego os arquivos.** Os slides e a legenda ficam numa pasta aqui do projeto, prontos para postar como você preferir: pelo celular, pelo Meta Business Suite (gratuito, da própria Meta) ou pela ferramenta de agendamento que você já usa.
 > - Custo: nada. Não precisa de conta em lugar nenhum.
+>
+> O Metricool é opcional. Já usa outra ferramenta de agendamento? Escolha a (2): os arquivos servem para qualquer uma.
 
 - Entrega de arquivos: não faça a pergunta 2; grave `publicacao_aprovacao` = `rascunho`.
 - Metricool: descubra o ID da marca pelo conector e grave em `metricool_blog_id`; o nome da marca aparece na revisão geral, para a pessoa conferir.
@@ -197,7 +202,8 @@ python scripts/instalar.py checar
 - **Apify** (só se a coleta escolhida foi Apify), sem a chave: guie um passo por vez — criar a conta grátis em apify.com, abrir Settings → API & Integrations, copiar a chave, abrir o arquivo `.env` desta pasta e colar depois de `APIFY_TOKEN=`, salvar. Cheque de novo: a linha só vira `OK` quando a chave é aceita pelo Apify.
 - **Cloudflare R2** (só se a publicação é pelo Metricool), sem as chaves: leia `docs/pipeline-publicacao.md`, parte "Setup, uma vez só", e guie **um passo por mensagem**, esperando o "feito" de cada um: criar a conta, criar o bucket, ligar a URL pública, criar a chave de acesso, colar os cinco valores no `.env`. Diga o nome exato de cada linha do `.env` e de onde vem cada valor. Cheque de novo ao final.
 - **Metricool** (só se a publicação é pelo Metricool): **teste você mesmo**, pedindo ao conector a lista de marcas (uma chamada só). Funcionou: grave o ID da marca em `metricool_blog_id`, se ainda não está gravado, e diga o nome da marca encontrada. Não há ferramenta do Metricool nesta sessão, ou a marca não aparece: leia `docs/metricool.md` e ensine **um passo por mensagem**, esperando o "feito" de cada um — conta profissional no Instagram, criar a conta no Metricool, conectar o Instagram dentro dele (Connections), conectar o Metricool ao Claude (Settings → Connectors → Browse connectors → Metricool → Grant access). Pule os passos que a pessoa disser que já fez. Lembre o limite do plano gratuito (20 posts publicados por mês). Quando ela avisar que conectou, teste de novo. Se a ferramenta ainda não aparecer nesta conversa, peça para abrir uma conversa nova nesta pasta e escrever **concluir a instalação**: o cadastro já está gravado, e você retoma direto daqui, sem refazer pergunta.
-- **ManyChat** (sempre, para todo cadastro): você não mexe no ManyChat, você ensina. Leia `docs/manychat.md` e ensine **um passo por mensagem**, esperando o "feito" de cada um: conta profissional e "Permitir acesso às mensagens" no Instagram, criar a conta e conectar o Instagram, criar a automação, testar. No passo da automação, entregue os textos prontos já preenchidos com a palavra (`isca_palavra`) e a entrega (`isca_entrega`) do cadastro, para ela só copiar, e diga para escolher **qualquer post**, assim vale para todo carrossel sem configurar de novo. Se ela já usa ManyChat, pule para a automação; se disser que faz depois, diga que o guia está em `docs/manychat.md` e siga.
+- **Resposta aos comentários** (sempre, para todo cadastro): pergunte, numa mensagem só, como a pessoa quer responder quem comenta a palavra — (1) **ManyChat**, sugerido, com plano gratuito: você ensina a montar; (2) **outra ferramenta** que ela já usa: diga qual; (3) **à mão**, sem ferramenta. Em todos os casos entregue os textos prontos de `docs/manychat.md` ("Textos prontos"), preenchidos com `isca_palavra` e `isca_entrega`. No (2), diga que a configuração é a mesma ideia em qualquer ferramenta (palavra no comentário → direct com a entrega) e não invente tela de ferramenta que você não conhece. No (3), diga que o texto final é o que ela cola no direct de quem comentar. Só no (1) siga o passo a passo abaixo.
+- **ManyChat** (só se ela escolheu o ManyChat): você não mexe no ManyChat, você ensina. Leia `docs/manychat.md` e ensine **um passo por mensagem**, esperando o "feito" de cada um: conta profissional e "Permitir acesso às mensagens" no Instagram, criar a conta e conectar o Instagram, criar a automação, testar. No passo da automação, entregue os textos prontos já preenchidos com a palavra (`isca_palavra`) e a entrega (`isca_entrega`) do cadastro, para ela só copiar, e diga para escolher **qualquer post**, assim vale para todo carrossel sem configurar de novo. Se ela já usa ManyChat, pule para a automação; se disser que faz depois, diga que o guia está em `docs/manychat.md` e siga.
 - Cloudflare R2 com `FALTA` na regra de limpeza: rode `python scripts/r2_limpeza.py configurar`. Se a chave não tiver permissão, guie a criação pelo painel (bucket → Settings → Object Lifecycle Rules → apagar depois de 30 dias, prefixo `carrosseis/`).
 - Só encerre a instalação com `PRONTO`, ou dizendo com clareza o que ficou pendente e o que deixa de funcionar por causa disso.
 

@@ -66,6 +66,16 @@ No fim do cadastro o agente pergunta se você quer que ele rode todo dia. Se sim
 
 A revisão do cadastro diz, em uma linha, até onde o agente vai sem você com as escolhas que fez.
 
+## Nenhuma ferramenta é obrigatória
+
+Apify, Metricool, Cloudflare e ManyChat são sugestões. Para cada uma há um caminho sem ferramenta e sem custo, e se você já usa outra ferramenta para a mesma coisa, pode continuar com ela:
+
+| Para quê | Sugerida | Sem ferramenta | Já usa outra? |
+|---|---|---|---|
+| Buscar os posts dos concorrentes | Apify | Pelo navegador do Claude, com o seu Instagram logado | Hoje o agente lê pela Apify ou pelo navegador |
+| Publicar | Metricool + Cloudflare R2 | Os arquivos ficam prontos em `entrega/` e você posta | Os arquivos de `entrega/` servem para qualquer ferramenta de agendamento |
+| Responder quem comenta a palavra | ManyChat | Você responde à mão com o texto pronto | Os textos prontos servem para qualquer automação de direct |
+
 ## As escolhas do cadastro que mudam o funcionamento
 
 **Coleta**
@@ -80,7 +90,7 @@ A revisão do cadastro diz, em uma linha, até onde o agente vai sem você com a
 Sem as chaves do Cloudflare R2, o agente entrega no modo manual e avisa.
 
 **Resposta aos comentários**
-- Todo carrossel pede um comentário com a sua palavra (por exemplo, GRUPO). Quem responde no direct, sozinho, é uma automação no ManyChat, que tem plano gratuito. O agente ensina a montar no fim do cadastro, com os textos já prontos.
+- Todo carrossel pede um comentário com a sua palavra (por exemplo, GRUPO). No fim do cadastro você escolhe como responder no direct: à mão, pelo ManyChat (sugerido, tem plano gratuito; o agente ensina a montar) ou por outra automação que já use. Nos três casos o agente entrega os textos prontos.
 
 **Guias passo a passo** (o agente ensina por eles, um passo por vez)
 - [Cloudflare R2](docs/pipeline-publicacao.md) · [Metricool](docs/metricool.md) · [ManyChat](docs/manychat.md). A chave da Apify o agente ensina direto na conversa.

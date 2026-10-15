@@ -4,6 +4,8 @@ O Metricool é onde o agente agenda o carrossel. Ele precisa de três coisas: a 
 
 O agente não cria conta e não digita senha. Ele ensina um passo por vez e, no fim, testa a conexão sozinho.
 
+**É opcional.** Sem o Metricool, o agente entrega os slides e a legenda prontos na pasta `entrega/`, e você posta como preferir: pelo celular, pelo Meta Business Suite (gratuito, da própria Meta) ou pela ferramenta de agendamento que já usa. Nesse caminho também não precisa do Cloudflare.
+
 Fontes: central de ajuda do Metricool (help.metricool.com), artigos "How to connect Instagram to Metricool" e "How to connect Metricool's MCP with Claude". Se a tela estiver diferente, a versão atual está lá.
 
 ## Antes de começar

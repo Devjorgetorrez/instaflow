@@ -112,7 +112,7 @@ def checar(cad):
 
     # --- resposta aos comentarios
     if cad.get("isca_palavra"):
-        linha("AVISO", f"ManyChat: quem comenta {cad['isca_palavra']} so recebe o direct sozinho com a automacao montada no ManyChat. Passo a passo em docs/manychat.md")
+        linha("AVISO", f"Resposta aos comentarios (opcional): quem comenta {cad['isca_palavra']} recebe o direct a mao, pelo ManyChat ou por outra automacao. Textos prontos e passo a passo em docs/manychat.md")
 
     # --- opcionais
     if env.get("OPENROUTER_API_KEY"):
